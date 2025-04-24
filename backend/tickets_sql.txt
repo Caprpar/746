@@ -1,0 +1,60 @@
+-- CREATE DATABASE matchBookings;
+USE matchBookings;
+
+CREATE TABLE partySize (
+	id     int AUTO_INCREMENT UNIQUE PRIMARY KEY,
+	amount int
+);
+
+CREATE TABLE stadium (
+	id   int AUTO_INCREMENT PRIMARY KEY,
+	city varchar(50)
+);
+
+CREATE TABLE bookedTickets (
+	id          int NOT NULL AUTO_INCREMENT UNIQUE,
+	partySizeId int,
+	stadiumId   int,
+	FOREIGN KEY (partySizeId) REFERENCES partySize (id),
+	FOREIGN KEY (stadiumId) REFERENCES stadium (id)
+);
+
+INSERT INTO partySize(amount)
+VALUES (2),
+			 (4),
+			 (6);
+
+INSERT INTO stadium(city)
+VALUES ("oslo"),
+			 ("bergen");
+
+-- post som skapar bookedTickets
+INSERT INTO bookedTickets(partySizeId, stadiumId)
+VALUES (1, 1);
+
+/*
+body:
+{
+	partySi
+}
+*/
+
+-- Visar boknings id, vart dom ska titta och hur många de är
+SELECT bT.id, pS.amount, s.city as stadium
+from bookedTickets bT
+join partySize pS on bT.partySizeId = pS.id
+join stadium s on bT.stadiumId = s.id;
+
+SELECT *
+FROM partySize;
+
+SELECT *
+FROM stadium;
+
+-- delete from bookedTickets where id  =2;
+/*
+drop TABLE bookedTickets
+drop TABLE partySize
+drop TABLE stadium
+
+*/
