@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <header>
+        <div class="header">
+          <button class="closeWindow">✕</button>
+          <fieldset class="fieldset">
+            <div class="fieldinfo">
+              <legend class="play">
+                <h1>Where do you want to play?</h1>
+              </legend>
+              <div class="inputs">
+                <div class="radioContainer">
+                  <input
+                    type="radio"
+                    id="bergen"
+                    value="bergen"
+                    name="city"
+                    class="radio"
+                    checked
+                  />
+                  <label for="bergen" class="city">Bergen</label>
+                </div>
+                <div class="radioContainer">
+                  <input
+                    type="radio"
+                    id="oslo"
+                    value="oslo"
+                    name="city"
+                    class="radio"
+                  />
+                  <label for="oslo" class="city">Oslo</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </header>
+      <main>
+        <div class="partyContainer">
+          <div class="partySize">Choose the party size</div>
+          <div class="partyBtnContainer">
+            <button class="partyBtn">2 people</button>
+            <button class="partyBtn">4 people</button>
+            <button class="partyBtn">6 people</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <!-- Change code above this line -->
+</html>
